@@ -1,0 +1,90 @@
+:root {
+  --bg: #EDEDED;
+  --black: #000000;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  background: var(--bg);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  padding: 24px;
+  text-align: center;
+}
+
+.quote-mark {
+  margin: 0;
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--black);
+  line-height: 1;
+  transition: opacity 250ms ease;
+}
+
+.fact-text {
+  margin: 0;
+  font-weight: 700;
+  color: var(--black);
+  font-size: clamp(22px, 2.4vw, 34px);
+  line-height: 1.4;
+  max-width: 32ch;
+  transition: opacity 250ms ease;
+}
+
+.next-btn {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--black);
+  background: transparent;
+  border: 1px solid var(--black);
+  border-radius: 2px;
+  padding: 10px 28px;
+  cursor: pointer;
+  transition: background-color 150ms ease, color 150ms ease;
+}
+
+.next-btn:hover {
+  background: var(--black);
+  color: #FFFFFF;
+}
+
+.next-btn:focus-visible {
+  outline: 2px solid var(--black);
+  outline-offset: 3px;
+}
+
+.is-fading {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .quote-mark,
+  .fact-text {
+    transition: none;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .quote-mark {
+    font-size: 36px;
+  }
+
+  .fact-text {
+    max-width: 28ch;
+  }
+}
